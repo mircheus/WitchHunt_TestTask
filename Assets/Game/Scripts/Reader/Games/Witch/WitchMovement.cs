@@ -6,21 +6,26 @@ using Random = UnityEngine.Random;
 
 namespace Game.Reader.Games.ShootingGame
 {
+    [RequireComponent(typeof(SpriteSwitcher))]
     public class WitchMovement : MonoBehaviour
     {
-        [SerializeField] private Transform[] leftMovingPoints;
-        [SerializeField] private Transform[] rightMovingPoints;
+        [SerializeField] private Transform[] leftTargetPoints;
+        [SerializeField] private Transform[] rightTargetPoints;
         [SerializeField] private int currentPointIndex;
         [SerializeField] private float speed;
         [SerializeField] private float speedDecrease;
         
         private bool _isMovingLeft;
         private Vector2 _target;
-
+        private SpriteSwitcher _spriteSwitcher;
+        
+        public bool IsMovingLeft => _isMovingLeft;
+        
         private void Start()
         {
+            _spriteSwitcher = GetComponent<SpriteSwitcher>();
             currentPointIndex = 0;
-            _target = leftMovingPoints[currentPointIndex].position;
+            _target = leftTargetPoints[currentPointIndex].position;
             _isMovingLeft = true;
         }
 
@@ -57,25 +62,36 @@ namespace Game.Reader.Games.ShootingGame
             if (_isMovingLeft)
             {
                 ChangeDirectionToRight();
+                // _spriteSwitcher.ChangeSpriteLookDirection();
             }
             else
             {
                 ChangeDirectionToLeft();
+                // _spriteSwitcher.ChangeSpriteLookDirection();
             }
         }
         
         private void ChangeDirectionToRight()
         {
             _isMovingLeft = false;
-            int randomIndex = Random.Range(0, rightMovingPoints.Length);
-            _target = rightMovingPoints[randomIndex].position;
+            SetRandomTargetFrom(rightTargetPoints);
+            // int randomIndex = Random.Range(0, rightMovingPoints.Length);
+            // _target = rightMovingPoints[randomIndex].position;
         }
 
         private void ChangeDirectionToLeft()
         {
             _isMovingLeft = true;
-            int randomIndex = Random.Range(0, leftMovingPoints.Length);
-            _target = leftMovingPoints[randomIndex].position;
+            SetRandomTargetFrom(leftTargetPoints);
+            // int randomIndex = Random.Range(0, leftMovingPoints.Length);
+            // _target = leftMovingPoints[randomIndex].position;
+        }
+
+        private void SetRandomTargetFrom(Transform[] sidePoints)
+        {
+            int randomIndex = Random.Range(0, sidePoints.Length);
+            _target = sidePoints[randomIndex].position;
+            _spriteSwitcher.ChangeSpriteLookDirection();
         }
     }
 }
