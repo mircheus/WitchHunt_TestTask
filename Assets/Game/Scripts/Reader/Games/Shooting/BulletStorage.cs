@@ -10,7 +10,6 @@ namespace Game.Reader.Games.Shooting
         [SerializeField] private Bullet[] bullets;
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private int bulletCount;
-        [SerializeField] private GameObject mainParent;
 
         private void Start()
         {
@@ -37,7 +36,8 @@ namespace Game.Reader.Games.Shooting
             for(int i = 0; i < bulletCount; i++)
             {
                 bullets[i] = Instantiate(bulletPrefab, transform);
-                Debug.Log("Bullet created");
+                bullets[i].gameObject.SetActive(false);
+                // Debug.Log("Bullet created");
             }
         }
     }

@@ -7,16 +7,20 @@ namespace Game.Reader.Games.Shooting
     public class ShootSystem : MonoBehaviour
     {
         [SerializeField] private Transform shootPoint;
-        // [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private GameObject mainParent;
         [SerializeField] private BulletStorage bulletStorage;
+        [SerializeField] private Bullet bulletPrefab;
     
         public void Shoot(Vector2 touchPosition)
         {
             Vector2 position = shootPoint.position;
             Vector2 direction = (touchPosition - position).normalized;
-            // Bullet bullet = Instantiate(bulletPrefab, position, Quaternion.identity, mainParent.transform);
-            // bullet.SetDirection(direction);
+            Bullet bullet = bulletStorage.GetBullet();
+            // Bullet bullet = Instantiate(bulletPrefab, mainParent.transform);
+            // Debug.Log(bullet == null);
+            bullet.transform.position = shootPoint.position;
+            bullet.SetDirection(direction);
+            bullet.gameObject.SetActive(true);
         }
     }
 }

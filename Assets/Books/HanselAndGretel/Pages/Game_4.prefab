@@ -875,4 +875,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 1905962118320851710}
   mainParent: {fileID: 2886042920439364451}
-  bulletStorage: {fileID: 0}
+  bulletStorage: {fileID: 4915521241008992335}
+  bulletPrefab: {fileID: 7239720573982202210, guid: 0497d8c7ce1d2344aa3356d53ae8a906, type: 3}
