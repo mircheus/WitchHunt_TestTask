@@ -12,6 +12,7 @@ namespace Game.Reader.Games.ShootingGame
         [SerializeField] private Transform[] rightMovingPoints;
         [SerializeField] private int currentPointIndex;
         [SerializeField] private float speed;
+        [SerializeField] private float speedDecrease;
         
         private bool _isMovingLeft;
         private Vector2 _target;
@@ -33,6 +34,16 @@ namespace Game.Reader.Games.ShootingGame
             if (col.TryGetComponent(out Point point))
             {
                 ChangeTarget();
+            }
+        }
+
+        public void DecreaseSpeed()
+        {
+            speed -= speedDecrease;
+            
+            if (speed <= 0)
+            {
+                speed = 0;
             }
         }
 
