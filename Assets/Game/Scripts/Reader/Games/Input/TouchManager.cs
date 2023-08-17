@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Game.Reader.Games.Shooting
+namespace Game.Reader.Games.ShootingGame
 {
     public class TouchManager : MonoBehaviour
     {
