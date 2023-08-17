@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+{   
+    private Vector2 _direction;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.Translate(_direction * Time.deltaTime);
+    }
+    
+    public void SetDirection(Vector2 direction)
+    {
+        _direction = direction;
     }
 }
