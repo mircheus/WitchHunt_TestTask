@@ -8,6 +8,7 @@ public class TouchManager : MonoBehaviour
 {
     [SerializeField] private InputAction screenPosition;
     [SerializeField] private InputAction press;
+    [SerializeField] private ShootSystem shootSystem;
 
     private Camera _mainCamera;
 
@@ -33,11 +34,8 @@ public class TouchManager : MonoBehaviour
     private void TouchPressed(InputAction.CallbackContext context)
     {
         Vector2 touchPosition = screenPosition.ReadValue<Vector2>();
-        RaycastHit2D hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(touchPosition), Vector2.zero, Mathf.Infinity);
+        Vector2 position = _mainCamera.ScreenToWorldPoint(touchPosition);
         
-        if (hit.collider != null)
-        {
-            Debug.Log(hit.collider.gameObject.name);
-        }
+        shootSystem.Shoot(position);
     }
 }
