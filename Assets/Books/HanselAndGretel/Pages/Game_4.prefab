@@ -1033,7 +1033,6 @@ GameObject:
   - component: {fileID: 8206706610033608983}
   - component: {fileID: 8828060192613240176}
   - component: {fileID: 5589233312113568126}
-  - component: {fileID: 7395834801406510701}
   - component: {fileID: 4393923771117551321}
   m_Layer: 0
   m_Name: Witch
@@ -1158,18 +1157,6 @@ MonoBehaviour:
   currentPointIndex: 0
   speed: 10
   speedDecrease: 5
---- !u!114 &7395834801406510701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5547376742364548094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fec4f63a3c67744a5facaa665c4113, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &4393923771117551321
 Rigidbody2D:
   serializedVersion: 4
