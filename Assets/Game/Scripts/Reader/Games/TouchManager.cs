@@ -32,7 +32,7 @@ public class TouchManager : MonoBehaviour
     
     private void TouchPressed(InputAction.CallbackContext context)
     {
-        Vector3 touchPosition = screenPosition.ReadValue<Vector2>();
+        Vector2 touchPosition = screenPosition.ReadValue<Vector2>();
         RaycastHit2D hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(touchPosition), Vector2.zero, Mathf.Infinity);
         
         if (hit.collider != null)
