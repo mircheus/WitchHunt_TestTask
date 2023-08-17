@@ -25,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495619956996636336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.82, y: 0.56, z: 0}
+  m_LocalPosition: {x: -2.1991024, y: -0.071456134, z: 10.071306}
   m_LocalScale: {x: 1.5102, y: 1.0559, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4210258388847236655}
-  m_RootOrder: 3
+  m_Father: {fileID: 6161479395673585409}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4369938038104514340
 SpriteRenderer:
@@ -592,7 +592,7 @@ Transform:
   - {fileID: 4826548437428797605}
   - {fileID: 5177743074336717437}
   - {fileID: 1721101666851933542}
-  - {fileID: 6540085973384464967}
+  - {fileID: 6161479395673585409}
   - {fileID: 5718432455738472529}
   - {fileID: 8833400866746205379}
   - {fileID: 1758564261700534021}
@@ -835,6 +835,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &3988048951283130865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6161479395673585409}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6161479395673585409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988048951283130865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3791023, y: 0.63145614, z: -10.071306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6540085973384464967}
+  m_Father: {fileID: 4210258388847236655}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4794390812279220428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1065,7 @@ GameObject:
   - component: {fileID: 8206706610033608983}
   - component: {fileID: 8828060192613240176}
   - component: {fileID: 5589233312113568126}
+  - component: {fileID: 2283480221520584918}
   - component: {fileID: 4393923771117551321}
   m_Layer: 0
   m_Name: Witch
@@ -1155,8 +1188,21 @@ MonoBehaviour:
   - {fileID: 6167322601657993085}
   - {fileID: 9059038789693322429}
   currentPointIndex: 0
-  speed: 10
-  speedDecrease: 5
+  speed: 9
+  speedDecrease: 3
+--- !u!114 &2283480221520584918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547376742364548094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fec4f63a3c67744a5facaa665c4113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!50 &4393923771117551321
 Rigidbody2D:
   serializedVersion: 4

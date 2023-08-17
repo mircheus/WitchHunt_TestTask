@@ -25,7 +25,7 @@ namespace Game.Reader.Games.ShootingGame
             {
                 TakeDamage(bullet.Damage);
                 _witchMovement.DecreaseSpeed();
-                bullet.gameObject.SetActive(false);
+                bullet.gameObject.SetActive(false); 
             }
         }
 
@@ -35,7 +35,8 @@ namespace Game.Reader.Games.ShootingGame
 
             if (health <= 0)
             {
-                WitchDefeated?.Invoke();
+                // WitchDefeated?.Invoke();
+                Debug.Log("Witch defeated");
             }
         }
     }
