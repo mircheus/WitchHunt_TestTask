@@ -177,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1758564261700534021}
+  - component: {fileID: 4915521241008992335}
   m_Layer: 0
   m_Name: BulletStorage
   m_TagString: Untagged
@@ -199,6 +200,22 @@ Transform:
   m_Father: {fileID: 4210258388847236655}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4915521241008992335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949342466461109407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63febef2137c0b643be3c536b7ed944d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets: []
+  bulletPrefab: {fileID: 7239720573982202210, guid: 0497d8c7ce1d2344aa3356d53ae8a906, type: 3}
+  bulletCount: 15
+  mainParent: {fileID: 2886042920439364451}
 --- !u!1 &2472719622525500923
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,5 +874,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 1905962118320851710}
-  bulletPrefab: {fileID: 7239720573982202210, guid: 0497d8c7ce1d2344aa3356d53ae8a906, type: 3}
   mainParent: {fileID: 2886042920439364451}
+  bulletStorage: {fileID: 0}
