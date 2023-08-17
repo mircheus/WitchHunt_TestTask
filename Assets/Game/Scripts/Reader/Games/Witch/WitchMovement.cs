@@ -2,20 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game.Reader.Games.ShootingGame
 {
     public class WitchMovement : MonoBehaviour
     {
-        [SerializeField] private Transform point1;
-        [SerializeField] private Transform point2;
+        [SerializeField] private Transform[] leftMovingPoints;
+        [SerializeField] private Transform[] rightMovingPoints;
+        [SerializeField] private int currentPointIndex;
         [SerializeField] private float speed;
         
+        private bool _isMovingLeft;
         private Vector2 _target;
 
         private void Start()
         {
-            _target = point1.position;
+            currentPointIndex = 0;
+            _target = leftMovingPoints[currentPointIndex].position;
+            _isMovingLeft = true;
         }
 
         private void Update()
@@ -25,22 +30,41 @@ namespace Game.Reader.Games.ShootingGame
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            throw new NotImplementedException();
-        }
-
-        private void Move()
-        {
-            transform.position = Vector2.MoveTowards(transform.position, _target, speed * Time.deltaTime);
-            
-            if (Vector2.Distance(transform.position, _target) < 0.1f)
+            if (col.TryGetComponent(out Point point))
             {
                 ChangeTarget();
             }
         }
 
+        private void Move()
+        {
+            transform.position = Vector2.MoveTowards(transform.position, _target, speed * Time.deltaTime);
+        }
+
         private void ChangeTarget()
         {
-            _target = point2.position;
+            if (_isMovingLeft)
+            {
+                ChangeDirectionToRight();
+            }
+            else
+            {
+                ChangeDirectionToLeft();
+            }
+        }
+        
+        private void ChangeDirectionToRight()
+        {
+            _isMovingLeft = false;
+            int randomIndex = Random.Range(0, rightMovingPoints.Length);
+            _target = rightMovingPoints[randomIndex].position;
+        }
+
+        private void ChangeDirectionToLeft()
+        {
+            _isMovingLeft = true;
+            int randomIndex = Random.Range(0, leftMovingPoints.Length);
+            _target = leftMovingPoints[randomIndex].position;
         }
     }
 }
