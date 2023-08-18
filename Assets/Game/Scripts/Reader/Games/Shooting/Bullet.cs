@@ -9,9 +9,12 @@ namespace Game.Reader.Games.ShootingGame
         [SerializeField] private float speed;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float scaleDecreaseModifier;
+        [SerializeField] private int damage;
         [SerializeField] private Vector3 defaultScale;
         
         private Vector2 _direction;
+        
+        public int Damage => damage;
 
         private void OnEnable()
         {
