@@ -12,17 +12,18 @@ namespace Game.Reader.Games
     {
         [Header("References:")]
         [SerializeField] private CinemachineVirtualCamera gameCamera;
-        [SerializeField] private WitchHealth _witchHealth;
-        [SerializeField] private WinMenu _winMenu;
+        [SerializeField] private WitchHealth witchHealth;
+        [SerializeField] private WinMenu winMenu;
+        [SerializeField] private TouchManager touchManager;
         
         private void OnEnable()
         {
-            _witchHealth.WitchDefeated += OnWitchDefeated;
+            witchHealth.WitchDefeated += OnWitchDefeated;
         }
 
         private void OnDisable()
         {
-            _witchHealth.WitchDefeated -= OnWitchDefeated;
+            witchHealth.WitchDefeated -= OnWitchDefeated;
         }
 
         private void Start()
@@ -32,7 +33,8 @@ namespace Game.Reader.Games
 
         private void OnWitchDefeated()
         {
-            _winMenu.ShowWinMenu();
+            winMenu.ShowWinMenu();
+            touchManager.enabled = false;
         }
     }
 }
