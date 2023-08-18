@@ -11,6 +11,8 @@ namespace Game.Reader.Games.ShootingGame
     public class WitchHealth : MonoBehaviour
     {
         [SerializeField] private int health;
+        [SerializeField] private BoxCollider2D _leftSideCollider;
+        [SerializeField] private BoxCollider2D _rightSideCollider;
         
         private WitchMovement _witchMovement;
         private WitchAnimation _witchAnimation;
@@ -23,6 +25,7 @@ namespace Game.Reader.Games.ShootingGame
             _witchMovement = GetComponent<WitchMovement>();
             _witchAnimation = GetComponent<WitchAnimation>();
             _witchFxPlayer = GetComponent<WitchFxPlayer>();
+            ChangeSideCollider();
         }
 
         private void OnTriggerEnter2D(Collider2D col)
@@ -34,6 +37,20 @@ namespace Game.Reader.Games.ShootingGame
                 bullet.gameObject.SetActive(false); 
                 _witchAnimation.PlayGetDamageAnimation();
                 _witchFxPlayer.PlayGetDamageFx();
+            }
+        }
+        
+        public void ChangeSideCollider()
+        {
+            if (_witchMovement.IsMovingLeft)
+            {
+                _leftSideCollider.enabled = true;
+                _rightSideCollider.enabled = false;
+            }
+            else
+            {
+                _leftSideCollider.enabled = false;
+                _rightSideCollider.enabled = true;
             }
         }
 

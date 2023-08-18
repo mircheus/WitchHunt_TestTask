@@ -20,6 +20,7 @@ namespace Game.Reader.Games.ShootingGame
         private Vector2 _target;
         private SpriteSwitcher _spriteSwitcher;
         private WitchAnimation _witchAnimation;
+        private WitchHealth _witchHealth;
         
         public bool IsMovingLeft => _isMovingLeft;
         
@@ -27,6 +28,7 @@ namespace Game.Reader.Games.ShootingGame
         {
             _spriteSwitcher = GetComponent<SpriteSwitcher>();
             _witchAnimation = GetComponent<WitchAnimation>();
+            _witchHealth = GetComponent<WitchHealth>();
             currentPointIndex = 0;
             _target = leftTargetPoints[currentPointIndex].position;
             _isMovingLeft = true;
@@ -65,38 +67,40 @@ namespace Game.Reader.Games.ShootingGame
             if (_isMovingLeft)
             {
                 ChangeDirectionToRight();
-                // _spriteSwitcher.ChangeSpriteLookDirection();
             }
             else
             {
                 ChangeDirectionToLeft();
-                // _spriteSwitcher.ChangeSpriteLookDirection();
             }
+            
+            // _target = _isMovingLeft ? ChangeDirectionToRight() : ChangeDirectionToLeft();
         }
         
         private void ChangeDirectionToRight()
         {
             _isMovingLeft = false;
             SetRandomTargetFrom(rightTargetPoints);
-            // int randomIndex = Random.Range(0, rightMovingPoints.Length);
-            // _target = rightMovingPoints[randomIndex].position;
+            ChangeSpriteAndAnimation();
         }
 
         private void ChangeDirectionToLeft()
         {
             _isMovingLeft = true;
             SetRandomTargetFrom(leftTargetPoints);
-            // int randomIndex = Random.Range(0, leftMovingPoints.Length);
-            // _target = leftMovingPoints[randomIndex].position;
+            ChangeSpriteAndAnimation();
         }
 
         private void SetRandomTargetFrom(Transform[] sidePoints)
         {
             int randomIndex = Random.Range(0, sidePoints.Length);
             _target = sidePoints[randomIndex].position;
-            
-            _spriteSwitcher.ChangeSpriteLookDirection(); // TODO: relocate these two lines, it's not responsibility of that method
+        }
+
+        private void ChangeSpriteAndAnimation()
+        {
+            _spriteSwitcher.ChangeSpriteLookDirection(); // TODO: relocate these three lines, it's not responsibility of that method
             _witchAnimation.PlayTurnAnimation();
+            _witchHealth.ChangeSideCollider();
         }
     }
 }
