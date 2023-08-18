@@ -1074,7 +1074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5718432455738472529
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,9 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2054b11926ff441b1fd0007476d443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedSprite: {fileID: 0}
   defaultSprite: {fileID: 0}
-  spriteDelayTime: 0
 --- !u!1 &6363127278873974662
 GameObject:
   m_ObjectHideFlags: 0

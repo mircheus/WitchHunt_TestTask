@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Reader.Games.ShootingGame
 {
-    public class BulletStorage : MonoBehaviour
+    public class BulletPool : MonoBehaviour
     {
         [SerializeField] private Bullet[] bullets;
         [SerializeField] private Bullet bulletPrefab;

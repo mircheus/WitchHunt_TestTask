@@ -7,7 +7,9 @@ namespace Game.Reader.Games.ShootingGame
     public class Bullet : MonoBehaviour
     {   
         [SerializeField] private float speed;
+        [SerializeField] private float rotationSpeed;
         [SerializeField] private int damage;
+        [SerializeField] private float scaleDecreaseModifier;
 
         private Vector2 _direction;
 
@@ -15,12 +17,23 @@ namespace Game.Reader.Games.ShootingGame
         
         private void Update()
         {
-            transform.Translate(_direction  * speed * Time.deltaTime, Space.World);
+            Move();
+            Rotate();
         }
     
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
+        }
+
+        private void Move()
+        {
+            transform.Translate(_direction  * speed * Time.deltaTime, Space.World);
+        }
+
+        private void Rotate()
+        {
+            transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime, Space.Self);
         }
     }
 }
