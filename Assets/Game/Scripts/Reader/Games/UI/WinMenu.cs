@@ -10,6 +10,7 @@ namespace Game.Reader.Games.ShootingGame
 {
     public class WinMenu : MonoBehaviour
     {
+        private const float HalfTransparent = 0.5f;
         // [SerializeField] private GameObject winText; 
         [SerializeField] private Image background;
         [SerializeField] private TMP_Text scoreText;
@@ -34,7 +35,7 @@ namespace Game.Reader.Games.ShootingGame
 
         private IEnumerator FadeInBackground()
         {
-            while (background.color.a < 0.5f)
+            while (background.color.a < HalfTransparent)
             {
                 background.color = new Color(background.color.r, background.color.g, background.color.b, background.color.a + _fadeSpeed);
                 yield return new WaitForEndOfFrame();
