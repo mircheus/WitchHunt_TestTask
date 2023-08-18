@@ -35,6 +35,7 @@ namespace Game.Reader.Games
         {
             winMenu.ShowWinMenu();
             touchManager.enabled = false;
+            Debug.Log("[ShooterGame] Finish");
         }
     }
 }
