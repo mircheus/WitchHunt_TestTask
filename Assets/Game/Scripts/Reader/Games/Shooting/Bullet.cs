@@ -46,6 +46,11 @@ namespace Game.Reader.Games.ShootingGame
         private void DecraseScale()
         {
             transform.localScale -= Vector3.one * scaleDecreaseModifier * Time.deltaTime;
+
+            if (transform.localScale.x <= 0)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
