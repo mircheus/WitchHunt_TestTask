@@ -1,4 +1,6 @@
+using System;
 using Cinemachine;
+using Game.Reader.Games.ShootingGame;
 using UnityEngine;
 
 namespace Game.Reader.Games
@@ -10,10 +12,27 @@ namespace Game.Reader.Games
     {
         [Header("References:")]
         [SerializeField] private CinemachineVirtualCamera gameCamera;
+        [SerializeField] private WitchHealth _witchHealth;
+        [SerializeField] private WinMenu _winMenu;
         
+        private void OnEnable()
+        {
+            _witchHealth.WitchDefeated += OnWitchDefeated;
+        }
+
+        private void OnDisable()
+        {
+            _witchHealth.WitchDefeated -= OnWitchDefeated;
+        }
+
         private void Start()
         {
             Debug.Log("[ShooterGame] Start");
+        }
+
+        private void OnWitchDefeated()
+        {
+            _winMenu.ShowWinMenu();
         }
     }
 }
