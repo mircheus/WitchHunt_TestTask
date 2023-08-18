@@ -9,9 +9,9 @@ namespace Game.Reader.Games.ShootingGame
     public class ShootSystem : MonoBehaviour
     {
         [SerializeField] private Transform shootPoint;
-        [SerializeField] private GameObject mainParent;
+        // [SerializeField] private GameObject mainParent;
         [SerializeField] private BulletPool bulletPool;
-        [SerializeField] private Bullet bulletPrefab;
+        // [SerializeField] private Bullet bulletPrefab;
 
         private SlingshotAnimation _slingshotAnimation;
         private bool _isAbleToShoot = true;
