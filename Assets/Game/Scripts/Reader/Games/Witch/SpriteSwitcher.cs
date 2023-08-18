@@ -35,12 +35,6 @@ namespace Game.Reader.Games.ShootingGame
                 FlipSpriteByX();
             }
         }
-        
-        // private IEnumerator ChangeSpriteToDefaultWithDelay(float delay)
-        // {
-        //     yield return new WaitForSeconds(delay);
-        //     _spriteRenderer.sprite = defaultSprite;
-        // }
 
         private void FlipSpriteByX()
         {
