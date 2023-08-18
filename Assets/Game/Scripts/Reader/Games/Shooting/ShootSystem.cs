@@ -12,9 +12,9 @@ namespace Game.Reader.Games.ShootingGame
         // [SerializeField] private GameObject mainParent;
         [SerializeField] private BulletPool bulletPool;
         // [SerializeField] private Bullet bulletPrefab;
-
         private SlingshotAnimation _slingshotAnimation;
         private bool _isAbleToShoot = true;
+        private float _clampedY = 0.2f;
         
         private void Awake()
         {
@@ -27,6 +27,7 @@ namespace Game.Reader.Games.ShootingGame
             {
                 Vector2 shootPointPosition = shootPoint.position;
                 Vector2 direction = (touchPosition - shootPointPosition).normalized;
+                direction = ClampDirectionByY(direction);
                 Bullet bullet = bulletPool.GetBullet();
                 bullet.transform.position = shootPointPosition;
                 bullet.SetDirection(direction);
@@ -39,6 +40,17 @@ namespace Game.Reader.Games.ShootingGame
         public void EnableShootAbility()
         {
             _isAbleToShoot = true;
+        }
+
+        private Vector2 ClampDirectionByY(Vector2 direction)
+        {
+            if (direction.y < _clampedY)
+            {
+                Vector2 newDirection = new Vector2(direction.x, _clampedY);
+                return newDirection;
+            }
+            
+            return direction;
         }
     }
 }
