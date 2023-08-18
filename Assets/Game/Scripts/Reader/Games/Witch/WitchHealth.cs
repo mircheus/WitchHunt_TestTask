@@ -6,12 +6,15 @@ using UnityEngine;
 namespace Game.Reader.Games.ShootingGame
 {
     [RequireComponent(typeof(WitchMovement))]
+    [RequireComponent(typeof(WitchAnimation))]
+    [RequireComponent(typeof(WitchFxPlayer))]
     public class WitchHealth : MonoBehaviour
     {
         [SerializeField] private int health;
         
         private WitchMovement _witchMovement;
         private WitchAnimation _witchAnimation;
+        private WitchFxPlayer _witchFxPlayer;
 
         public event Action WitchDefeated;
 
@@ -19,6 +22,7 @@ namespace Game.Reader.Games.ShootingGame
         {
             _witchMovement = GetComponent<WitchMovement>();
             _witchAnimation = GetComponent<WitchAnimation>();
+            _witchFxPlayer = GetComponent<WitchFxPlayer>();
         }
 
         private void OnTriggerEnter2D(Collider2D col)
@@ -29,6 +33,7 @@ namespace Game.Reader.Games.ShootingGame
                 _witchMovement.DecreaseSpeed();
                 bullet.gameObject.SetActive(false); 
                 _witchAnimation.PlayGetDamageAnimation();
+                _witchFxPlayer.PlayGetDamageFx();
             }
         }
 
