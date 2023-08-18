@@ -23,7 +23,6 @@ namespace Game.Reader.Games.ShootingGame
         private WitchHealth _witchHealth;
         
         public bool IsMovingLeft => _isMovingLeft;
-        public float Speed => speed;
         
         private void Start()
         {
@@ -73,8 +72,6 @@ namespace Game.Reader.Games.ShootingGame
             {
                 ChangeDirectionToLeft();
             }
-            
-            // _target = _isMovingLeft ? ChangeDirectionToRight() : ChangeDirectionToLeft();
         }
         
         private void ChangeDirectionToRight()
@@ -99,7 +96,7 @@ namespace Game.Reader.Games.ShootingGame
 
         private void ChangeSpriteAndAnimation()
         {
-            _spriteSwitcher.ChangeSpriteLookDirection(); // TODO: relocate these three lines, it's not responsibility of that method
+            _spriteSwitcher.ChangeSpriteLookDirection(); 
             _witchAnimation.PlayTurnAnimation();
             _witchHealth.ChangeSideCollider();
         }
