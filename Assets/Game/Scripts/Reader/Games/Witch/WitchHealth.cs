@@ -55,7 +55,7 @@ namespace Game.Reader.Games.ShootingGame
             }
         }
 
-        private void TakeDamage(int damage)
+        private void TakeDamage(int damage) // TODO: remove damage as parameter
         {
             health -= damage;
 
