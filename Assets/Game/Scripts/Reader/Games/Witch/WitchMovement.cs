@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 namespace Game.Reader.Games.ShootingGame
 {
     [RequireComponent(typeof(SpriteSwitcher))]
+    [RequireComponent(typeof(WitchAnimation))]
     public class WitchMovement : MonoBehaviour
     {
         [SerializeField] private Transform[] leftTargetPoints;
@@ -18,12 +19,14 @@ namespace Game.Reader.Games.ShootingGame
         private bool _isMovingLeft;
         private Vector2 _target;
         private SpriteSwitcher _spriteSwitcher;
+        private WitchAnimation _witchAnimation;
         
         public bool IsMovingLeft => _isMovingLeft;
         
         private void Start()
         {
             _spriteSwitcher = GetComponent<SpriteSwitcher>();
+            _witchAnimation = GetComponent<WitchAnimation>();
             currentPointIndex = 0;
             _target = leftTargetPoints[currentPointIndex].position;
             _isMovingLeft = true;
@@ -91,7 +94,9 @@ namespace Game.Reader.Games.ShootingGame
         {
             int randomIndex = Random.Range(0, sidePoints.Length);
             _target = sidePoints[randomIndex].position;
-            _spriteSwitcher.ChangeSpriteLookDirection();
+            
+            _spriteSwitcher.ChangeSpriteLookDirection(); // TODO: relocate these two lines, it's not responsibility of that method
+            _witchAnimation.PlayTurnAnimation();
         }
     }
 }

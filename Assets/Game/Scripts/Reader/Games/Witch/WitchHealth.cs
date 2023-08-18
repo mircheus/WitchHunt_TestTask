@@ -11,12 +11,14 @@ namespace Game.Reader.Games.ShootingGame
         [SerializeField] private int health;
         
         private WitchMovement _witchMovement;
+        private WitchAnimation _witchAnimation;
 
         public event Action WitchDefeated;
 
         private void Awake()
         {
             _witchMovement = GetComponent<WitchMovement>();
+            _witchAnimation = GetComponent<WitchAnimation>();
         }
 
         private void OnTriggerEnter2D(Collider2D col)
@@ -26,6 +28,7 @@ namespace Game.Reader.Games.ShootingGame
                 TakeDamage(bullet.Damage);
                 _witchMovement.DecreaseSpeed();
                 bullet.gameObject.SetActive(false); 
+                _witchAnimation.PlayGetDamageAnimation();
             }
         }
 
