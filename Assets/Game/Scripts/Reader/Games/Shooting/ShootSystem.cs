@@ -22,12 +22,13 @@ namespace Game.Reader.Games.ShootingGame
 
         public void Shoot(Vector2 touchPosition)
         {
-            Vector2 position = shootPoint.position;
-            Vector2 direction = (touchPosition - position).normalized;
+            Vector2 shootPointPosition = shootPoint.position;
+            // Vector2 position = shootPointPosition;
+            Vector2 direction = (touchPosition - shootPointPosition).normalized;
             Bullet bullet = bulletPool.GetBullet();
             // Bullet bullet = Instantiate(bulletPrefab, mainParent.transform);
             // Debug.Log(bullet == null);
-            bullet.transform.position = shootPoint.position;
+            bullet.transform.position = shootPointPosition;
             bullet.SetDirection(direction);
             bullet.gameObject.SetActive(true);
             _slingshotAnimation.PlayShootAnimation();
