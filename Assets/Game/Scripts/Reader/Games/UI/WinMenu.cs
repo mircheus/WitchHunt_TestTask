@@ -19,14 +19,24 @@ namespace Game.Reader.Games.ShootingGame
         {
             background.gameObject.SetActive(true);
             scoreText.gameObject.SetActive(true);
-            StartCoroutine(FadeIn());
+            StartCoroutine(FadeInText());
+            StartCoroutine(FadeInBackground());
         }
 
-        private IEnumerator FadeIn()
+        private IEnumerator FadeInText()
         {
             while(scoreText.color.a < 1)
             {
                 scoreText.color = new Color(scoreText.color.r, scoreText.color.g, scoreText.color.b, scoreText.color.a + _fadeSpeed);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        private IEnumerator FadeInBackground()
+        {
+            while (background.color.a < 0.5f)
+            {
+                background.color = new Color(background.color.r, background.color.g, background.color.b, background.color.a + _fadeSpeed);
                 yield return new WaitForEndOfFrame();
             }
         }

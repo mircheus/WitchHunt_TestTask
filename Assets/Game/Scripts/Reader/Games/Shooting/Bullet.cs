@@ -8,14 +8,11 @@ namespace Game.Reader.Games.ShootingGame
     {   
         [SerializeField] private float speed;
         [SerializeField] private float rotationSpeed;
-        [SerializeField] private int damage;
         [SerializeField] private float scaleDecreaseModifier;
         [SerializeField] private Vector3 defaultScale;
         
         private Vector2 _direction;
 
-        public int Damage => damage;
-        
         private void OnEnable()
         {
             transform.localScale = defaultScale;

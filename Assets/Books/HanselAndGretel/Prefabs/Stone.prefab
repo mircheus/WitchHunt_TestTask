@@ -126,6 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   rotationSpeed: 600
-  damage: 3
   scaleDecreaseModifier: 0.7
   defaultScale: {x: 0.5, y: 0.5, z: 1}

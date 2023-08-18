@@ -1820,7 +1820,7 @@ MonoBehaviour:
   - {fileID: 6167322601657993085}
   - {fileID: 9059038789693322429}
   currentPointIndex: 0
-  speed: 6
+  speed: 12
   speedDecrease: 3
 --- !u!114 &2283480221520584918
 MonoBehaviour:
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fec4f63a3c67744a5facaa665c4113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 4
   _leftSideCollider: {fileID: 8828060192613240176}
   _rightSideCollider: {fileID: 6604268204017044177}
 --- !u!50 &4393923771117551321
@@ -2512,7 +2512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7476494281448700822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.65, y: 7.31, z: 10.071306}
+  m_LocalPosition: {x: 5.71, y: 6.89, z: 10.071306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2588,7 +2588,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9333334, g: 0.8352942, b: 0.48235297, a: 1}
-  m_Intensity: 1
+  m_Intensity: 7.23
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -2824,7 +2824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2172820622449821809
 Transform:
   m_ObjectHideFlags: 0

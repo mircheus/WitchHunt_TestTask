@@ -23,6 +23,7 @@ namespace Game.Reader.Games.ShootingGame
         private WitchHealth _witchHealth;
         
         public bool IsMovingLeft => _isMovingLeft;
+        public float Speed => speed;
         
         private void Start()
         {

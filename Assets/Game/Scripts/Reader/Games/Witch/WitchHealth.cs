@@ -10,8 +10,6 @@ namespace Game.Reader.Games.ShootingGame
     [RequireComponent(typeof(WitchFxPlayer))]
     public class WitchHealth : MonoBehaviour
     {
-        [Header("Health = speed / speedDecrease")]
-        [SerializeField] private int health;
         [SerializeField] private BoxCollider2D _leftSideCollider;
         [SerializeField] private BoxCollider2D _rightSideCollider;
         
@@ -33,11 +31,15 @@ namespace Game.Reader.Games.ShootingGame
         {
             if (col.TryGetComponent(out Bullet bullet))
             {
-                TakeDamage(bullet.Damage);
                 _witchMovement.DecreaseSpeed();
                 bullet.gameObject.SetActive(false);
                 _witchAnimation.PlayGetDamageAnimation();
                 _witchFxPlayer.PlayGetDamageFx();
+                
+                if (IsSpeedEqualZero())
+                {
+                    WitchDefeated?.Invoke();                    
+                }
             }
         }
         
@@ -55,15 +57,9 @@ namespace Game.Reader.Games.ShootingGame
             }
         }
 
-        private void TakeDamage(int damage) // TODO: remove damage as parameter
+        private bool IsSpeedEqualZero() 
         {
-            health -= damage;
-
-            if (health <= 0)
-            {
-                WitchDefeated?.Invoke();
-                Debug.Log("Witch defeated");
-            }
+            return _witchMovement.Speed == 0;
         }
     }
 }
