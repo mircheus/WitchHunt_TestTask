@@ -10,8 +10,9 @@ namespace Game.Reader.Games.ShootingGame
     [RequireComponent(typeof(WitchFxPlayer))]
     public class WitchHealth : MonoBehaviour
     {
-        [SerializeField] private BoxCollider2D _leftSideCollider;
-        [SerializeField] private BoxCollider2D _rightSideCollider;
+        [SerializeField] private int health;
+        [SerializeField] private BoxCollider2D leftSideCollider;
+        [SerializeField] private BoxCollider2D rightSideCollider;
         
         private WitchMovement _witchMovement;
         private WitchAnimation _witchAnimation;
@@ -31,15 +32,11 @@ namespace Game.Reader.Games.ShootingGame
         {
             if (col.TryGetComponent(out Bullet bullet))
             {
+                TakeDamage(bullet.Damage);
                 _witchMovement.DecreaseSpeed();
                 bullet.gameObject.SetActive(false);
                 _witchAnimation.PlayGetDamageAnimation();
                 _witchFxPlayer.PlayGetDamageFx();
-                
-                if (IsSpeedEqualZero())
-                {
-                    WitchDefeated?.Invoke();                    
-                }
             }
         }
         
@@ -47,19 +44,24 @@ namespace Game.Reader.Games.ShootingGame
         {
             if (_witchMovement.IsMovingLeft)
             {
-                _leftSideCollider.enabled = true;
-                _rightSideCollider.enabled = false;
+                leftSideCollider.enabled = true;
+                rightSideCollider.enabled = false;
             }
             else
             {
-                _leftSideCollider.enabled = false;
-                _rightSideCollider.enabled = true;
+                leftSideCollider.enabled = false;
+                rightSideCollider.enabled = true;
             }
         }
 
-        private bool IsSpeedEqualZero() 
+        private void TakeDamage(int damage)
         {
-            return _witchMovement.Speed == 0;
+            health -= damage;
+            
+            if (health <= 0)
+            {
+                WitchDefeated?.Invoke();
+            }
         }
     }
 }

@@ -1820,8 +1820,8 @@ MonoBehaviour:
   - {fileID: 6167322601657993085}
   - {fileID: 9059038789693322429}
   currentPointIndex: 0
-  speed: 12
-  speedDecrease: 3
+  speed: 18
+  speedDecrease: 2
 --- !u!114 &2283480221520584918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,8 +1835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  _leftSideCollider: {fileID: 8828060192613240176}
-  _rightSideCollider: {fileID: 6604268204017044177}
+  leftSideCollider: {fileID: 8828060192613240176}
+  rightSideCollider: {fileID: 6604268204017044177}
 --- !u!50 &4393923771117551321
 Rigidbody2D:
   serializedVersion: 4
