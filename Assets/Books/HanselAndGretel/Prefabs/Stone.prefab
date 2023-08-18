@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f060a3973ec513b40af9bb72d3e48e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  rotationSpeed: 150
+  speed: 10
+  rotationSpeed: 250
   damage: 0
+  scaleDecreaseModifier: 0.15
+  defaultScale: {x: 0.5, y: 0.5, z: 1}

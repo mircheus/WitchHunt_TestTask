@@ -10,15 +10,22 @@ namespace Game.Reader.Games.ShootingGame
         [SerializeField] private float rotationSpeed;
         [SerializeField] private int damage;
         [SerializeField] private float scaleDecreaseModifier;
-
+        [SerializeField] private Vector3 defaultScale;
+        
         private Vector2 _direction;
 
         public int Damage => damage;
+        
+        private void OnEnable()
+        {
+            transform.localScale = defaultScale;
+        }
         
         private void Update()
         {
             Move();
             Rotate();
+            DecraseScale();
         }
     
         public void SetDirection(Vector2 direction)
@@ -34,6 +41,11 @@ namespace Game.Reader.Games.ShootingGame
         private void Rotate()
         {
             transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime, Space.Self);
+        }
+        
+        private void DecraseScale()
+        {
+            transform.localScale -= Vector3.one * scaleDecreaseModifier * Time.deltaTime;
         }
     }
 }

@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 1758564261700534021}
   - component: {fileID: 4915521241008992335}
   m_Layer: 0
-  m_Name: BulletStorage
+  m_Name: BulletPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1074,7 +1074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5718432455738472529
 Transform:
   m_ObjectHideFlags: 0
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 1905962118320851710}
   mainParent: {fileID: 2886042920439364451}
-  bulletStorage: {fileID: 4915521241008992335}
+  bulletPool: {fileID: 4915521241008992335}
   bulletPrefab: {fileID: 7239720573982202210, guid: 0497d8c7ce1d2344aa3356d53ae8a906, type: 3}
 --- !u!1 &8584422580428634724
 GameObject:
