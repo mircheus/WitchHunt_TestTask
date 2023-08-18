@@ -25,7 +25,7 @@ namespace Game.Reader.Games.ShootingGame
         {
             Move();
             Rotate();
-            DecraseScale();
+            DecreaseScale();
         }
     
         public void SetDirection(Vector2 direction)
@@ -43,7 +43,7 @@ namespace Game.Reader.Games.ShootingGame
             transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime, Space.Self);
         }
         
-        private void DecraseScale()
+        private void DecreaseScale()
         {
             transform.localScale -= Vector3.one * scaleDecreaseModifier * Time.deltaTime;
 
