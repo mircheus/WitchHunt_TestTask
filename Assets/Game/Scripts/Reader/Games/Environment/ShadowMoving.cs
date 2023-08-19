@@ -8,9 +8,8 @@ namespace Game.Reader.Games.ShootingGame
 {
     public class ShadowMoving : MonoBehaviour
     {
-        [SerializeField] private BackgroundShadows _backgroundShadows;
+        [SerializeField] private BackgroundShadows backgroundShadows;
         [SerializeField] private float speed;
-        [SerializeField] private Transform leftPoint;
         [SerializeField] private Transform rightPoint;
 
         private Vector2 _target;
@@ -23,7 +22,7 @@ namespace Game.Reader.Games.ShootingGame
 
         private void MoveShadows()
         {
-            _backgroundShadows.transform.DOMove(_target, speed).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
+            backgroundShadows.transform.DOMove(_target, speed).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
         }
     }
 }

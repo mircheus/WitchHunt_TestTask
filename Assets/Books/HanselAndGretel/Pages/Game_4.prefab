@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f503bb9e8d7c1b84c9d83713f38dd7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backgroundShadows: {fileID: 2697594488297044501}
+  backgroundShadows: {fileID: 2697594488297044501}
   speed: 7
   leftPoint: {fileID: 6813842463919118280}
   rightPoint: {fileID: 3561584185809697088}
@@ -2607,7 +2607,7 @@ GameObject:
   - component: {fileID: 7538600243231500523}
   - component: {fileID: 2697594488297044501}
   m_Layer: 0
-  m_Name: strelyalki_0015_zatemnenie
+  m_Name: BackgroundShadows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
