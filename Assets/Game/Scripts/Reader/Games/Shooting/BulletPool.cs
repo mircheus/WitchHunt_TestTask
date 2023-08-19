@@ -13,7 +13,7 @@ namespace Game.Reader.Games.ShootingGame
 
         private void Start()
         {
-            InitializeStorage();
+            InitializePool();
         }
 
         public Bullet GetBullet()
@@ -29,7 +29,7 @@ namespace Game.Reader.Games.ShootingGame
             return null;
         }
 
-        private void InitializeStorage()
+        private void InitializePool()
         {
             bullets = new Bullet[bulletCount];
             

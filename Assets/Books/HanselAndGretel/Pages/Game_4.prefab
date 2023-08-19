@@ -902,7 +902,6 @@ Transform:
   - {fileID: 4772092622797626737}
   - {fileID: 8909192972524855089}
   - {fileID: 8571625435861162623}
-  - {fileID: 8257371626566576670}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2660,52 +2659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e8f8ae726391a4a92bed45089c2423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7916139121605367485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8257371626566576670}
-  - component: {fileID: 17844534924518022}
-  m_Layer: 0
-  m_Name: WitchInitializer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8257371626566576670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7916139121605367485}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3626103, y: 0.06368819, z: -0.063429065}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4210258388847236655}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &17844534924518022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7916139121605367485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f183a5ca5e33f4cbcf46014f40b937, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  witchPrefab: {fileID: 6479058791790001473, guid: 930d6867aab14a544822212fa47a524a, type: 3}
-  spawnPoints: []
 --- !u!1 &8174344081086489120
 GameObject:
   m_ObjectHideFlags: 0
