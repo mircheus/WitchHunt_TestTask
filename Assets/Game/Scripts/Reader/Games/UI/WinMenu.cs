@@ -14,7 +14,7 @@ namespace Game.Reader.Games.ShootingGame
 
         [SerializeField] private Image background;
         [SerializeField] private TMP_Text scoreText;
-        [SerializeField] private float _fadeSpeed;
+        [SerializeField] private float fadeSpeed;
 
         public void ShowWinMenu()
         {
@@ -28,7 +28,7 @@ namespace Game.Reader.Games.ShootingGame
         {
             while(scoreText.color.a < 1)
             {
-                scoreText.color = new Color(scoreText.color.r, scoreText.color.g, scoreText.color.b, scoreText.color.a + _fadeSpeed);
+                scoreText.color = new Color(scoreText.color.r, scoreText.color.g, scoreText.color.b, scoreText.color.a + fadeSpeed);
                 yield return new WaitForEndOfFrame();
             }
         }
@@ -37,7 +37,7 @@ namespace Game.Reader.Games.ShootingGame
         {
             while (background.color.a < HalfTransparent)
             {
-                background.color = new Color(background.color.r, background.color.g, background.color.b, background.color.a + _fadeSpeed);
+                background.color = new Color(background.color.r, background.color.g, background.color.b, background.color.a + fadeSpeed);
                 yield return new WaitForEndOfFrame();
             }
         }
