@@ -8,4 +8,3 @@ namespace Game.Reader.Games.ShootingGame
     {
     }
 }
-
