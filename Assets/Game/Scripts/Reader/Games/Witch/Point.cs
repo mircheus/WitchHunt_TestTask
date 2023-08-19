@@ -6,9 +6,6 @@ namespace Game.Reader.Games.ShootingGame
 {
     public class Point : MonoBehaviour
     {
-        [SerializeField] private bool _isLeftPoint;
-        
-        public bool IsLeftPoint => _isLeftPoint;
     }
 }
 
