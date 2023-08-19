@@ -7,14 +7,8 @@ namespace Game.Reader.Games.ShootingGame
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(WitchMovement))]
-    public class SpriteSwitcher : MonoBehaviour
+    public class SpriteFlipper : MonoBehaviour
     {
-        // [SerializeField] private Sprite damagedSprite;
-        [SerializeField] private Sprite defaultSprite;
-        // [SerializeField] private float spriteDelayTime;
-
-        private Coroutine _currentChangeSpriteCoroutine;
-        
         private SpriteRenderer _spriteRenderer;
         private WitchMovement _witchMovement;
 

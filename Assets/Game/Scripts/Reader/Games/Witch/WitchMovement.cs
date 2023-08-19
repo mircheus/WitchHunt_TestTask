@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace Game.Reader.Games.ShootingGame
 {
-    [RequireComponent(typeof(SpriteSwitcher))]
+    [RequireComponent(typeof(SpriteFlipper))]
     [RequireComponent(typeof(WitchAnimation))]
     public class WitchMovement : MonoBehaviour
     {
@@ -18,7 +18,7 @@ namespace Game.Reader.Games.ShootingGame
         
         private bool _isMovingLeft;
         private Vector2 _target;
-        private SpriteSwitcher _spriteSwitcher;
+        private SpriteFlipper _spriteFlipper;
         private WitchAnimation _witchAnimation;
         private WitchHealth _witchHealth;
         
@@ -26,7 +26,7 @@ namespace Game.Reader.Games.ShootingGame
         
         private void Start()
         {
-            _spriteSwitcher = GetComponent<SpriteSwitcher>();
+            _spriteFlipper = GetComponent<SpriteFlipper>();
             _witchAnimation = GetComponent<WitchAnimation>();
             _witchHealth = GetComponent<WitchHealth>();
             Transform[] startSide = GetRandomStartSide();
@@ -101,7 +101,7 @@ namespace Game.Reader.Games.ShootingGame
 
         private void ChangeSpriteAndAnimation()
         {
-            _spriteSwitcher.ChangeSpriteLookDirection(); 
+            _spriteFlipper.ChangeSpriteLookDirection(); 
             _witchAnimation.PlayTurnAnimation();
             _witchHealth.ChangeSideCollider();
         }
