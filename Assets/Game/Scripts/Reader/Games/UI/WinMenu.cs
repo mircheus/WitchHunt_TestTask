@@ -11,7 +11,7 @@ namespace Game.Reader.Games.ShootingGame
     public class WinMenu : MonoBehaviour
     {
         private const float HalfTransparent = 0.5f;
-        // [SerializeField] private GameObject winText; 
+
         [SerializeField] private Image background;
         [SerializeField] private TMP_Text scoreText;
         [SerializeField] private float _fadeSpeed;
