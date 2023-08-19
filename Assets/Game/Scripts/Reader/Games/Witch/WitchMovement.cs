@@ -29,9 +29,9 @@ namespace Game.Reader.Games.ShootingGame
             _spriteSwitcher = GetComponent<SpriteSwitcher>();
             _witchAnimation = GetComponent<WitchAnimation>();
             _witchHealth = GetComponent<WitchHealth>();
-            currentPointIndex = 0;
-            _target = leftTargetPoints[currentPointIndex].position;
-            _isMovingLeft = true;
+            Transform[] startSide = GetRandomStartSide();
+            currentPointIndex = GetRandomStartPointIndex(startSide);
+            transform.position = startSide[currentPointIndex].position;
         }
 
         private void Update()
@@ -104,6 +104,23 @@ namespace Game.Reader.Games.ShootingGame
             _spriteSwitcher.ChangeSpriteLookDirection(); 
             _witchAnimation.PlayTurnAnimation();
             _witchHealth.ChangeSideCollider();
+        }
+        
+        private Transform[] GetRandomStartSide()
+        {
+            int randomNumber = Random.Range(0, 2);
+            
+            if (randomNumber == 1)
+            {
+                return leftTargetPoints;
+            }
+
+            return rightTargetPoints;
+        }
+
+        private int GetRandomStartPointIndex(Transform[] startPoints)
+        {
+            return Random.Range(0, startPoints.Length);
         }
     }
 }
