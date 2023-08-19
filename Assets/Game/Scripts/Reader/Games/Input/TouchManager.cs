@@ -37,7 +37,6 @@ namespace Game.Reader.Games.ShootingGame
         {
             Vector2 touchPosition = screenPosition.ReadValue<Vector2>();
             Vector2 position = _mainCamera.ScreenToWorldPoint(touchPosition);
-         
             shootSystem.Shoot(position);
         }
     }
