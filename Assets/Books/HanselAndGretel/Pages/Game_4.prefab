@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 5710503235768473946}
   scoreText: {fileID: 473667535088528493}
-  _fadeSpeed: 0.001
+  fadeSpeed: 0
 --- !u!1 &8584422580428634724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,11 +3089,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6679589473345229650, guid: 930d6867aab14a544822212fa47a524a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802372185494907291, guid: 930d6867aab14a544822212fa47a524a, type: 3}
+      propertyPath: leftSideDamageFx
+      value: 
+      objectReference: {fileID: 887753008600887774}
+    - target: {fileID: 6802372185494907291, guid: 930d6867aab14a544822212fa47a524a, type: 3}
+      propertyPath: rightSideDamageFx
+      value: 
+      objectReference: {fileID: 3625062684638675633}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d6867aab14a544822212fa47a524a, type: 3}
 --- !u!4 &847378355809696734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6566595376107203694, guid: 930d6867aab14a544822212fa47a524a, type: 3}
+  m_PrefabInstance: {fileID: 5828578844855211952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &887753008600887774 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6679589473359177326, guid: 930d6867aab14a544822212fa47a524a, type: 3}
+  m_PrefabInstance: {fileID: 5828578844855211952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3625062684638675633 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7110492056377234689, guid: 930d6867aab14a544822212fa47a524a, type: 3}
   m_PrefabInstance: {fileID: 5828578844855211952}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &6568789283432457049 stripped
