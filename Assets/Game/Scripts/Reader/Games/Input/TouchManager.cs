@@ -14,7 +14,7 @@ namespace Game.Reader.Games.ShootingGame
 
         private Camera _mainCamera;
 
-        private void Awake()
+        private void Start()
         {
             _mainCamera = Camera.main;
         }

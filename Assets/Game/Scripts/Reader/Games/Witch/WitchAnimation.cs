@@ -9,7 +9,7 @@ public class WitchAnimation : MonoBehaviour
     private int _turnAnimation = Animator.StringToHash("Turn");
     private int _getDamageAnimation = Animator.StringToHash("GetDamage");
     
-    private void Awake()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
     }

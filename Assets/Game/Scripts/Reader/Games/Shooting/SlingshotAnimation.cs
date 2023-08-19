@@ -8,7 +8,7 @@ public class SlingshotAnimation : MonoBehaviour
     private int _prepareAnimation = Animator.StringToHash("Prepare"); 
     private int _shootAnimation = Animator.StringToHash("Shoot");
     
-    private void Awake()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
     }

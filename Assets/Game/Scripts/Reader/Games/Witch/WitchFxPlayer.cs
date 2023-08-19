@@ -11,7 +11,7 @@ public class WitchFxPlayer : MonoBehaviour
 
     private WitchMovement _witchMovement;
 
-    private void Awake()
+    private void Start()
     {
         _witchMovement = GetComponent<WitchMovement>();
     }

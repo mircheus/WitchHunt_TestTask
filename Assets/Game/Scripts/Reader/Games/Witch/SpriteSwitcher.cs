@@ -18,7 +18,7 @@ namespace Game.Reader.Games.ShootingGame
         private SpriteRenderer _spriteRenderer;
         private WitchMovement _witchMovement;
 
-        private void Awake()
+        private void Start()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _witchMovement = GetComponent<WitchMovement>();

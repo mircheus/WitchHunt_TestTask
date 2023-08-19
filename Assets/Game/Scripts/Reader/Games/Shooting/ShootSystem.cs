@@ -16,7 +16,7 @@ namespace Game.Reader.Games.ShootingGame
         private bool _isAbleToShoot = true;
         private float _clampedY = 0.2f;
         
-        private void Awake()
+        private void Start()
         {
             _slingshotAnimation = GetComponent<SlingshotAnimation>();
         }
