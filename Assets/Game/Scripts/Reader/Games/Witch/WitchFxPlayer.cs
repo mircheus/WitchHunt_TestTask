@@ -4,27 +4,30 @@ using System.Collections.Generic;
 using Game.Reader.Games.ShootingGame;
 using UnityEngine;
 
-public class WitchFxPlayer : MonoBehaviour
+namespace Game.Reader.Games.ShootingGame
 {
-    [SerializeField] private ParticleSystem _leftSideDamageFx;
-    [SerializeField] private ParticleSystem _rightSideDamageFx;
-
-    private WitchMovement _witchMovement;
-
-    private void Start()
+    public class WitchFxPlayer : MonoBehaviour
     {
-        _witchMovement = GetComponent<WitchMovement>();
-    }
+        [SerializeField] private ParticleSystem _leftSideDamageFx;
+        [SerializeField] private ParticleSystem _rightSideDamageFx;
 
-    public void PlayGetDamageFx()
-    {
-        if (_witchMovement.IsMovingLeft)
+        private WitchMovement _witchMovement;
+
+        private void Start()
         {
-            _leftSideDamageFx.Play();
+            _witchMovement = GetComponent<WitchMovement>();
         }
-        else
+
+        public void PlayGetDamageFx()
         {
-            _rightSideDamageFx.Play();
+            if (_witchMovement.IsMovingLeft)
+            {
+                _leftSideDamageFx.Play();
+            }
+            else
+            {
+                _rightSideDamageFx.Play();
+            }
         }
     }
 }
