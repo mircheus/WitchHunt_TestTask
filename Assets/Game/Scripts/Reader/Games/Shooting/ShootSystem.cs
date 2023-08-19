@@ -10,6 +10,7 @@ namespace Game.Reader.Games.ShootingGame
     {
         [SerializeField] private Transform shootPoint;
         [SerializeField] private BulletPool bulletPool;
+        
         private SlingshotAnimation _slingshotAnimation;
         private bool _isAbleToShoot = true;
         private float _clampedY = 0.2f;
