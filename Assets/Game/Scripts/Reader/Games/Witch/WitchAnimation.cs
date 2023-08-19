@@ -3,24 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WitchAnimation : MonoBehaviour
+namespace Game.Reader.Games.ShootingGame
 {
-    private Animator _animator;
-    private int _turnAnimation = Animator.StringToHash("Turn");
-    private int _getDamageAnimation = Animator.StringToHash("GetDamage");
-    
-    private void Start()
+    public class WitchAnimation : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
-    }
+        private Animator _animator;
+        private int _turnAnimation = Animator.StringToHash("Turn");
+        private int _getDamageAnimation = Animator.StringToHash("GetDamage");
+    
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
-    public void PlayTurnAnimation()
-    {
-        _animator.Play(_turnAnimation);
-    }
+        public void PlayTurnAnimation()
+        {
+            _animator.Play(_turnAnimation);
+        }
     
-    public void PlayGetDamageAnimation()
-    {
-        _animator.Play(_getDamageAnimation);
+        public void PlayGetDamageAnimation()
+        {
+            _animator.Play(_getDamageAnimation);
+        }
     }
 }
