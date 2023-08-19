@@ -37,7 +37,6 @@ namespace Game.Reader.Games.ShootingGame
             {
                 bullets[i] = Instantiate(bulletPrefab, transform);
                 bullets[i].gameObject.SetActive(false);
-                // Debug.Log("Bullet created");
             }
         }
     }
