@@ -1280,7 +1280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backgroundShadows: {fileID: 2697594488297044501}
-  speed: 4
+  speed: 7
   leftPoint: {fileID: 6813842463919118280}
   rightPoint: {fileID: 3561584185809697088}
 --- !u!1 &4007592945800550756
@@ -2825,7 +2825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2172820622449821809
 Transform:
   m_ObjectHideFlags: 0

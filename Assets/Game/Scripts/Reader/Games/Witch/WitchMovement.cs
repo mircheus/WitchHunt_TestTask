@@ -44,6 +44,11 @@ namespace Game.Reader.Games.ShootingGame
             if (col.TryGetComponent(out Point point))
             {
                 ChangeTarget();
+
+                if (_witchHealth.IsDefeated)
+                {
+                    speed = 0;
+                }
             }
         }
 

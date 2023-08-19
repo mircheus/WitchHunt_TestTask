@@ -17,15 +17,19 @@ namespace Game.Reader.Games.ShootingGame
         private WitchMovement _witchMovement;
         private WitchAnimation _witchAnimation;
         private WitchFxPlayer _witchFxPlayer;
+        private bool _isDefeated;
+
+        public bool IsDefeated => _isDefeated;
 
         public event Action WitchDefeated;
 
-        private void Awake()
+        private void Start()
         {
             _witchMovement = GetComponent<WitchMovement>();
             _witchAnimation = GetComponent<WitchAnimation>();
             _witchFxPlayer = GetComponent<WitchFxPlayer>();
             ChangeSideCollider();
+            _isDefeated = false;
         }
 
         private void OnTriggerEnter2D(Collider2D col)
@@ -61,6 +65,7 @@ namespace Game.Reader.Games.ShootingGame
             if (health <= 0)
             {
                 WitchDefeated?.Invoke();
+                _isDefeated = true;
             }
         }
     }
