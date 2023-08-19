@@ -8,8 +8,8 @@ namespace Game.Reader.Games.ShootingGame
 {
     public class WitchFxPlayer : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem _leftSideDamageFx;
-        [SerializeField] private ParticleSystem _rightSideDamageFx;
+        [SerializeField] private ParticleSystem leftSideDamageFx;
+        [SerializeField] private ParticleSystem rightSideDamageFx;
 
         private WitchMovement _witchMovement;
 
@@ -22,11 +22,11 @@ namespace Game.Reader.Games.ShootingGame
         {
             if (_witchMovement.IsMovingLeft)
             {
-                _leftSideDamageFx.Play();
+                leftSideDamageFx.Play();
             }
             else
             {
-                _rightSideDamageFx.Play();
+                rightSideDamageFx.Play();
             }
         }
     }
